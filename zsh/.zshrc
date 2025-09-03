@@ -1,14 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-# Path to your Oh My Zsh installation.
+# Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Custom folder path
+export ZSH_CUSTOM="$ZSH/custom"
+
+# Theme configuration
 ZSH_THEME="robbyrussell"
+
+# Add local binaries to PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -101,12 +101,6 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Oh My Zsh config
-ZSH="$HOME/.oh-my-zsh"
-
-# Theme
-ZSH_THEME="robbyrussell"
-
 # Chỉ load plugin autosuggestions nếu đã được cài đặt
 plugins=()
 if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
@@ -117,6 +111,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # Load custom configurations
-[[ -f ~/noahzsh/zsh/custom/aliases.zsh ]] && source ~/noahzsh/zsh/custom/aliases.zsh
-[[ -f ~/noahzsh/zsh/custom/export.zsh ]] && source ~/noahzsh/zsh/custom/export.zsh
+[[ -f ${ZSH_CUSTOM}/aliases.zsh ]] && source ${ZSH_CUSTOM}/aliases.zsh
+[[ -f ${ZSH_CUSTOM}/export.zsh ]] && source ${ZSH_CUSTOM}/export.zsh
 
