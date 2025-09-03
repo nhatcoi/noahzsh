@@ -1,8 +1,8 @@
 # Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
-# Custom folder path
-export ZSH_CUSTOM="$ZSH/custom"
+# Custom folder path (using our repository's custom folder)
+export ZSH_CUSTOM="$HOME/noahzsh/zsh/custom"
 
 # Theme configuration
 ZSH_THEME="robbyrussell"
@@ -103,7 +103,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Chỉ load plugin autosuggestions nếu đã được cài đặt
 plugins=()
-if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
+if [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
   plugins+=(zsh-autosuggestions)
 fi
 
