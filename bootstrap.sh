@@ -6,9 +6,10 @@
 #
 # Các bước thực hiện:
 # 1. Kiểm tra các công cụ cần thiết (zsh, git)
-# 2. Cài đặt Oh My Zsh nếu chưa có
-# 3. Cài đặt plugin zsh-autosuggestions
-# 4. Tạo symbolic link cho .zshrc
+# 2. Clone repository nếu chưa có
+# 3. Cài đặt Oh My Zsh nếu chưa có
+# 4. Cài đặt plugin zsh-autosuggestions
+# 5. Tạo symbolic link cho .zshrc
 ###########################################
 
 # Thiết lập màu sắc cho output
@@ -51,7 +52,22 @@ if ! command_exists curl; then
     exit 1
 fi
 
-# BƯỚC 2: Cài đặt Oh My Zsh
+# BƯỚC 2: Clone repository NoahZSH
+echo -e "${BLUE}Checking for NoahZSH repository...${NC}"
+
+# Kiểm tra xem đã clone repo chưa
+if [ ! -d "$HOME/noahzsh" ]; then
+    echo -e "${YELLOW}Cloning NoahZSH repository...${NC}"
+    git clone https://github.com/nhatcoi/noahzsh.git "$HOME/noahzsh"
+    cd "$HOME/noahzsh"
+    chmod +x bootstrap.sh
+else
+    echo -e "${GREEN}NoahZSH repository already exists${NC}"
+    cd "$HOME/noahzsh"
+    git pull
+fi
+
+# BƯỚC 3: Cài đặt Oh My Zsh
 # Oh My Zsh là framework cung cấp:
 # - Quản lý plugin và theme
 # - Tích hợp git và các công cụ khác
