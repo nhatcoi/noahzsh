@@ -1,71 +1,98 @@
 # NoahZSH
 
-Cấu hình ZSH cá nhân với các alias và plugin hữu ích.
+A minimalist ZSH configuration setup with essential plugins and custom configurations.
 
-## Yêu cầu hệ thống
+## Features
+
+- Clean and simple configuration
+- Auto-suggestions plugin
+- Custom aliases and exports
+- Easy one-line installation
+
+## Quick Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nhatcoi/noahzsh/main/bootstrap.sh | bash
+```
+
+## Requirements
 
 - `zsh` shell
-  - macOS: Đã cài sẵn
-  - Ubuntu/Debian: `sudo apt install zsh`
-  - CentOS/RHEL: `sudo yum install zsh`
 - `git`
 - `curl`
 
-## Cài đặt
+## What's Included
 
+- `zsh-autosuggestions`: Fish-like autosuggestions for ZSH
+- Custom aliases for common commands
+- Environment variables setup
+- Robbyrussell theme
+- Git integration
+
+## Manual Setup
+
+1. Clone the repository:
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/noahzsh.git ~/noahzsh
-
-# Chạy script cài đặt
-cd ~/noahzsh
-chmod +x bootstrap.sh
-./bootstrap.sh
-
-# Khởi động lại terminal hoặc chạy
-source ~/.zshrc
+git clone https://github.com/nhatcoi/noahzsh.git ~/noahzsh
 ```
 
-## Quá trình cài đặt sẽ:
-
-1. Cài đặt Oh My Zsh nếu chưa có
-2. Cài đặt plugin zsh-autosuggestions cho tính năng gợi ý lệnh
-3. Tạo symbolic link để sử dụng cấu hình có sẵn
-
-## Tính năng có sẵn
-
-1. Terminal có màu sắc (theme robbyrussell)
-2. Gợi ý lệnh thông minh khi gõ (như fish shell)
-3. Hiển thị trạng thái git trong prompt
-4. Các alias hữu ích:
-   - `ll`, `la`: Liệt kê file
-   - `...`: Di chuyển lên 2 thư mục
-   - `gs`, `ga`, `gc`, `gp`: Các lệnh git
-
-## Xử lý sự cố
-
-### Plugin không hoạt động?
+2. Run the bootstrap script:
 ```bash
-# Cài đặt lại plugin
-rm -rf ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cd ~/noahzsh && chmod +x bootstrap.sh && ./bootstrap.sh
+```
+
+## Structure
+
+```
+noahzsh/
+├── bootstrap.sh           # Installation script
+└── zsh/
+    ├── .zshrc            # Main ZSH configuration
+    └── custom/
+        ├── aliases.zsh    # Custom aliases
+        ├── export.zsh     # Environment variables
+        └── plugins/       # Custom plugins directory
+```
+
+## Troubleshooting
+
+### Plugin issues
+```bash
+# Reinstall plugin
+rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 cd ~/noahzsh && ./bootstrap.sh
 ```
 
-### Vấn đề khác?
-1. Kiểm tra shell mặc định:
+### Other issues
 ```bash
-# Xem shell hiện tại
-echo $SHELL
-
-# Đặt zsh làm shell mặc định
+# Set ZSH as default shell
 chsh -s $(which zsh)
-```
 
-2. Cài đặt lại Oh My Zsh:
-```bash
+# Reinstall Oh My Zsh
 rm -rf ~/.oh-my-zsh
 cd ~/noahzsh && ./bootstrap.sh
 ```
+
+## Customization
+
+Edit these files to customize your setup:
+- `aliases.zsh`: Add/modify command aliases
+- `export.zsh`: Configure environment variables
+- `.zshrc`: Change theme or add plugins
+
+## Updates
+
+```bash
+cd ~/noahzsh && git pull && ./bootstrap.sh
+```
+
+## License
+
+MIT
+
+## Author
+
+nhatcoi
 
 ## Cấu hình có sẵn
 
