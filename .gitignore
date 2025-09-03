@@ -1,0 +1,5 @@
+# Ignore plugin directories
+zsh/custom/plugins/zsh-autosuggestions/
+
+# Backup files
+*.backup*
