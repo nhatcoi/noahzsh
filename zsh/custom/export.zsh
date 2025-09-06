@@ -1,3 +1,11 @@
+# =============================================================================
+# Environment Variables Configuration
+# =============================================================================
+
+# Prevent multiple loading
+if [[ -z "$NOAHZSH_EXPORTS_LOADED" ]]; then
+    export NOAHZSH_EXPORTS_LOADED=1
+
 # Path additions
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
@@ -63,3 +71,4 @@ export LESS_TERMCAP_us=$'\E[01;32m'      # Bắt đầu underline
 # FZF configuration
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'bat --color=always {}'"
+fi

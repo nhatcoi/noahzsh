@@ -1,3 +1,11 @@
+# =============================================================================
+# Custom Aliases Configuration
+# =============================================================================
+
+# Prevent multiple loading
+if [[ -z "$NOAHZSH_ALIASES_LOADED" ]]; then
+    export NOAHZSH_ALIASES_LOADED=1
+
 # Aliases chung
 alias c="clear"
 alias h="history"
@@ -17,6 +25,23 @@ alias ll="ls -alh"
 alias la="ls -A"
 alias l="ls -CF"
 alias lsd="ls -l | grep '^d'"  # Chỉ list directories
+
+# zsh
+alias openzsh="code ~/.zshrc"
+alias openaliases="code ~/noahzsh/zsh/custom/aliases.zsh"
+alias savezsh="source ~/.zshrc"
+
+alias rmnoahzsh="rm -rf ~/noahzsh"
+alias rmomzsh="rm -rf ~/.oh-my-zsh"
+
+# nsh - noahzsh (legacy aliases - use 'nsh' command instead)
+alias nshreload="source ~/.zshrc"
+alias nshopen="code ~/.zshrc"
+alias nshopenaliases="code ~/noahzsh/zsh/custom/aliases.zsh"
+alias nshsave="source ~/.zshrc"
+alias nshrmnoahzsh="rm -rf ~/noahzsh"
+alias nshrmomzsh="rm -rf ~/.oh-my-zsh"
+
 
 # Git
 alias g="git"
@@ -111,3 +136,4 @@ function extract() {
         echo "'$1' không phải là file hợp lệ"
     fi
 }
+fi
