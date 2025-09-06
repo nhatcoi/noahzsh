@@ -9,6 +9,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
 alias -- -="cd -"
+alias p="pwd"
 
 # List files
 alias ls="ls -G"
@@ -17,15 +18,36 @@ alias la="ls -A"
 alias l="ls -CF"
 alias lsd="ls -l | grep '^d'"  # Chỉ list directories
 
-# Git aliases
+# Git
 alias g="git"
+alias gcl="git clone"
+
+alias gcm="git commit -m" # commit
+alias gcma="git commit -a -m"
+alias gcmam="git commit --amend"
+alias gcmempty="git commit --allow-empty -m"
+
+
+alias gck="git checkout" # checkout
+alias gckb="git checkout -b"
+
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit -m"
+alias gaa="git add ."
+
 alias gp="git push"
-alias gl="git pull"
+alias gpo="git push origin"
+alias gpu="git push -u origin"
+alias gpf="git push --force"
+alias gpfwl="git push --force-with-lease"
+
+alias gpl="git pull"
+alias gplo="git pull origin"
+
+alias gf="git fetch"
+alias gfo="git fetch origin"
+
 alias gd="git diff"
-alias gco="git checkout"
 alias gb="git branch"
 alias glog="git log --oneline --decorate --graph"
 
