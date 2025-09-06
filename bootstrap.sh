@@ -108,6 +108,11 @@ main() {
         print_success "Existing .zshrc backed up"
     fi
     
+    # Create custom directory structure
+    print_status "Setting up directory structure..."
+    mkdir -p "$INSTALL_DIR/zsh/custom"/{plugins,themes,functions,completions}
+    print_success "Directory structure created"
+    
     # Create symbolic link for .zshrc
     print_status "Setting up configuration..."
     ln -sf "$INSTALL_DIR/zsh/.zshrc" "$HOME/.zshrc"

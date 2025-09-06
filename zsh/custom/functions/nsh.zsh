@@ -112,10 +112,15 @@ nsh() {
             echo "🔌 Plugins:      zsh-autosuggestions"
             echo ""
             echo "📋 Config files:"
-            echo "  • oh-my-zsh.zsh    - Oh My Zsh settings"
-            echo "  • autosuggestions.zsh - Autosuggestions config"
-            echo "  • aliases.zsh      - Custom aliases"
-            echo "  • export.zsh       - Environment variables"
+            echo "  📁 plugins/"
+            echo "    • oh-my-zsh.zsh    - Oh My Zsh settings"
+            echo "    • autosuggestions.zsh - Autosuggestions config"
+            echo "  📁 functions/"
+            echo "    • nsh.zsh          - NoahZSH command line tool"
+            echo "  📁 themes/           - Custom themes (empty)"
+            echo "  📁 completions/      - Custom completions (empty)"
+            echo "  • aliases.zsh        - Custom aliases"
+            echo "  • export.zsh         - Environment variables"
             ;;
             
         update)
