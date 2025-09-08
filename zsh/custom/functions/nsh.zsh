@@ -35,6 +35,8 @@ nsh() {
             echo "  clean             Clean up temporary files"
             echo "  backup            Backup current configuration"
             echo "  restore           Restore from backup"
+            echo "  install-deps      Install welcome banner dependencies"
+            echo "  terminal-setup    Setup terminal for best banner display"
             echo "  uninstall         Uninstall NoahZSH completely"
             ;;
             
@@ -210,6 +212,26 @@ nsh() {
             ls -la "$backup_dir"/*.tar.gz 2>/dev/null || echo "No backups found"
             echo ""
             echo "💡 To restore: tar -xzf $backup_dir/backup_file.tar.gz -C $NOAHZSH_DIR"
+            ;;
+            
+        install-deps)
+            echo "🔧 Installing welcome banner dependencies..."
+            if [[ -f "$NOAHZSH_DIR/install-dependencies.sh" ]]; then
+                chmod +x "$NOAHZSH_DIR/install-dependencies.sh"
+                "$NOAHZSH_DIR/install-dependencies.sh"
+            else
+                echo "❌ Dependencies installer not found"
+            fi
+            ;;
+            
+        terminal-setup)
+            echo "🖥️  Setting up terminal for best banner display..."
+            if [[ -f "$NOAHZSH_DIR/terminal-setup.sh" ]]; then
+                chmod +x "$NOAHZSH_DIR/terminal-setup.sh"
+                "$NOAHZSH_DIR/terminal-setup.sh"
+            else
+                echo "❌ Terminal setup script not found"
+            fi
             ;;
             
         uninstall)

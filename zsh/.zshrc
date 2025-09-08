@@ -41,8 +41,11 @@ export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 # Load NoahZSH command line tool
 [[ -f "$ZSH_CUSTOM/functions/nsh.zsh" ]] && source "$ZSH_CUSTOM/functions/nsh.zsh"
 
+# Load welcome banner plugin
+[[ -f "$ZSH_CUSTOM/plugins/welcome-banner.zsh" ]] && source "$ZSH_CUSTOM/plugins/welcome-banner.zsh"
+
 # =============================================================================
-# Welcome Message
+# Welcome Message (Simple fallback)
 # =============================================================================
 
 # Function to center text
@@ -53,10 +56,10 @@ center_text() {
     printf "%*s%s\n" $padding "" "$text"
 }
 
-# Show welcome message only in interactive shells
-if [[ $- == *i* ]]; then
+# Show simple welcome message only if welcome banner plugin is not loaded
+if [[ $- == *i* ]] && [[ -z "$NOAHZSH_WELCOME_BANNER_LOADED" ]]; then
     echo ""
-    center_text "NoahZSH is ready!"
+    center_text "NoahZSH is ready! 🚀"
     center_text "Custom directory: $ZSH_CUSTOM"
     echo ""
 fi
